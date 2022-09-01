@@ -158,6 +158,7 @@ def gif(e):
         ax.text2D(0.50, 0.86, o, transform=ax.transAxes,fontsize = 12, color = 'blue')      
         
         plt.close(fig)
+        
     val = len(df['xX_left_wrist'][e])
     frames = val
     ani = animation.FuncAnimation(fig, plotting, frames=frames, interval=100)   
@@ -436,7 +437,7 @@ reduced_data = IncrementalPCA(n_components=pca_num_components).fit_transform(opt
 results = pd.DataFrame(reduced_data,columns=['pca1','pca2'])
 sns.scatterplot(x="pca1", y="pca2", hue=optics_df['Cluster'], data=results)
 plt.title('Optics Clustering with 2 dimensions')
-plt.savefig("Optics_cluster_method.png")
+plt.savefig("Optics_cluster_methods.png")
 plt.show()
 
 ###### DBSCAN
